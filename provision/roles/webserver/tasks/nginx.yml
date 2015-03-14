@@ -11,6 +11,6 @@
 - name: Configure virtual host
   sudo: yes
   template:
-    src: "nginx/sites-available/site1.conf"
-    dest: "/etc/nginx/sites-available/site1.conf"
+    src: "nginx/site1.conf"
+    dest: "/etc/nginx/conf.d/site1.conf"
   notify: restart nginx
