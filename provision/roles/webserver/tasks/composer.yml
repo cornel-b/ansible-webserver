@@ -1,0 +1,6 @@
+---
+- name: Install Composer
+  sudo: yes
+  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+
+- shell: mv /usr/local/bin/composer.phar /usr/local/bin/composer

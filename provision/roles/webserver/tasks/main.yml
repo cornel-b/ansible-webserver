@@ -2,3 +2,5 @@
 - include: nginx.yml
 - include: mysql.yml
 - include: php.yml
+- include: composer.yml
+- include: git.yml
