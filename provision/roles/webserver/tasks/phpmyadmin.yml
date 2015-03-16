@@ -1,0 +1,21 @@
+---
+- name: Install phpMyAdmin
+  sudo: yes
+  apt: name={{item}} state=present
+  with_items:
+    - phpmyadmin
+    - apache2-utils
+    - php5-mcrypt
+
+- sudo: yes
+  shell: ln -s /usr/share/phpmyadmin /var/www/phpmyadmin
+
+- name: Update config file
+  template:
+    src: "phpmyadmin/config.inc.php"
+    dest: "/etc/phpmyadmin/config.inc.php"
+
+- name: Create virtual host
+  template:
+    src: "phpmyadmin/phpmyadmin.conf"
+    dest: "/etc/nginx/conf.d/phpmyadmin.conf"
