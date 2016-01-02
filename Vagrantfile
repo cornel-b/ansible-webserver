@@ -15,8 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define 'test1.dev' do |node|
     node.vm.hostname = 'test1.dev'
-    node.vm.network :private_network, ip: '192.168.99.100'
-    node.hostmanager.aliases = %w(www.test1.dev)
+    node.vm.network :private_network, ip: '192.168.101.100'
+    node.hostmanager.aliases = %w(www.web1.dev)
   end
 
   config.vm.provision :ansible do |ansible|
