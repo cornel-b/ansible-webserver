@@ -1,0 +1,17 @@
+---
+- name: Install nginx
+  sudo: yes
+  apt: name="nginx" state=present
+
+- name: Configure nginx
+  sudo: yes
+  template:
+    src: "nginx/nginx.conf"
+    dest: "/etc/nginx/nginx.conf"
+
+- name: Configure virtual host
+  sudo: yes
+  template:
+    src: "nginx/web1.conf"
+    dest: "/etc/nginx/conf.d/web1.conf"
+  notify: restart nginx
